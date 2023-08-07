@@ -3,7 +3,7 @@ package A02;
 public class Banco {
     Conta[] contas = {};
 
-    public void criarConta(Cliente cliente){
+    public Conta criarConta(Cliente cliente){
         String str = String.valueOf(this.contas.length);
         Conta novaConta = new Conta(cliente, str);
         Conta[] novaLista = new Conta[this.contas.length + 1];
@@ -15,6 +15,7 @@ public class Banco {
             }
         }
         contas = novaLista.clone();
+        return novaLista[novaLista.length -1];
     }
 
         public Conta buscarConta(String nConta){
